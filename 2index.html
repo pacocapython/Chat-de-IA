@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat de IA - Brainktellion</title>
+</head>
+<body>
+    <h2>Chat de Ia - Brainktellion</h2>
+    <div id="chat"></div>
+    <input type="text" name="input" id="input" placeholder="Digite sua mensagem">
+    <button onclick="sendMessage()">Enviar</button>
+    <script>
+        async function sendMessage(){
+        const input = document.getElementById("input");
+        const chat = document.getElementById("chat");
+
+        const prompt = input.value;
+        if (prompt) return;
+
+        chat.innerHTML += `<div class="user"><b>Você:</b> ${prompt}</div>`;
+        const responseDiv = document.createElement("div");
+        responseDiv.className="bot";
+        responseDiv.innerHTML="<b>Ia:</b>";
+        chat.appendChild(responseDiv)
+        }
+    </script>
+
+</body>
+</html>
