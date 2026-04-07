@@ -23,6 +23,17 @@
         responseDiv.className="bot";
         responseDiv.innerHTML="<b>Ia:</b>";
         chat.appendChild(responseDiv)
+        input.value = "";
+
+        const res = await fetch("http://localhost:11434/api/generate",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type":"application/json"
+                },
+                body : JSON.stringify({})
+            }
+        )
         }
     </script>
 
